@@ -1,0 +1,45 @@
+Arguments: 
+  E:\softpath\nodejs\node.exe E:\softpath\nodejs\node_global\node_modules\yarn\bin\yarn.js add nprogress
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;E:\softpath\Git\cmd;E:\softpath\nodejs\;C:\ProgramData\chocolatey\bin;E:\softpath\nodejs\node_global;"E:\softpath\jdk\bin;E:\softpath\jdk\jre\bin";C:\Users\Admin\AppData\Local\Android\Sdk\platform-tools;C:\Users\Admin\AppData\Local\Android\Sdk\emulator;C:\Users\Admin\AppData\Local\Android\Sdk\tools;C:\Users\Admin\AppData\Local\Android\Sdk\tools\bin;E:\softpath\python2.7;E:\softpath\flutter\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;E:\softpath\wechatDev\微信web开发者工具\dll;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;E:\softpath\Microsoft VS Code\bin;C:\Users\Admin\AppData\Roaming\npm;E:\software\Microsoft VS Code\bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\workspace_vue3\vite_vue3_ts\node_modules\esbuild-windows-64\esbuild.exe'
+
+npm manifest: 
+  {
+    "name": "vite_vue3_ts",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vue-tsc --noEmit && vite build",
+      "preview": "vite preview",
+      "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
+      "prettier": "prettier --write ."
+    },
+    "dependencies": {
+      "vue": "^3.2.25"
+    },
+    "devDependencies": {
+      "@vitejs/plugin-vue": "^2.0.0",
+      "typescript": "^4.4.4",
+      "vite": "^2.7.2",
+      "vue-tsc": "^0.29.8"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
