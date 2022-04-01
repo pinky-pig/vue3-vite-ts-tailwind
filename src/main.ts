@@ -3,7 +3,7 @@ import App from './App.vue'
 const app = createApp(App)
 
 // tailWind-css
-import './style/default.css'
+import './style/index.css'
 
 // 路由
 import router from './router/index'
