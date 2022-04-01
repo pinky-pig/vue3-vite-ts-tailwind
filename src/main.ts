@@ -17,6 +17,11 @@ import 'vfonts/FiraCode.css'
 import { naive } from './setup/naive'
 app.use(naive)
 
+// ElementUI
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+app.use(ElementPlus)
+
 // VueX
 import store from './store'
 app.use(store)

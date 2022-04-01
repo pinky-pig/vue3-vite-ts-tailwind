@@ -27,8 +27,8 @@ import { Sidebar, NavigationBar, Main } from './index'
   // background: @color-primary ;
 }
 .main-header{
-  min-height: 100px;
-  height: 100px;
+  min-height: 63px;
+  height: 63px;
   width: 100%;
 }
 .main-container{
