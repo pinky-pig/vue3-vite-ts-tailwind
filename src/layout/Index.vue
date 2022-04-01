@@ -1,18 +1,50 @@
 <template>
   <div :class="$style['app-wrapper']">
-    <!-- <Sidebar></Sidebar> -->
+    <header :class="$style['main-header']">
+      <NavigationBar></NavigationBar>
+    </header>
+
+    <div :class="$style['main-container']">
+      <section :class="$style['sidebar']">
+        <Sidebar></Sidebar>
+      </section>
+      <main :class="$style['main']">
+        <Main></Main>
+      </main>
+    </div>
+
   </div>
 </template>
 <script setup lang="ts">
-import { Sidebar } from './index'
-
+import { Sidebar, NavigationBar, Main } from './index'
 </script>
 
 <style lang="less" module>
 .app-wrapper{
+  @apply flex flex-col overflow-hidden;
   width: 100%;
   height: 100%;
-  background: @color-primary ;
+  // background: @color-primary ;
 }
+.main-header{
+  min-height: 100px;
+  height: 100px;
+  width: 100%;
+}
+.main-container{
+  @apply flex flex-row flex-1;
+
+  .sidebar{
+    min-width: 200px;
+    width: 200px;
+    height: 100%;
+  }
+  .main{
+    flex: 1;
+    width: 200px;
+    height: 100%;
+  }
+}
+
 
 </style>
