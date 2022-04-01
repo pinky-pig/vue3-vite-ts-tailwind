@@ -6,6 +6,14 @@ import {
   NMessageProvider,
   NButton,
   NIcon,
+  NSpace,
+  NSwitch,
+  NLayout,
+  NLayoutSider,
+
+
+
+
 } from 'naive-ui'
 
 export const naive = create({
@@ -14,5 +22,10 @@ export const naive = create({
     NMessageProvider,
     NButton,
     NIcon,
+
+    NSpace,
+    NSwitch,
+    NLayout,
+    NLayoutSider,
   ]
 })

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 ::-webkit-scrollbar{
   width:6px;
   height:6px;
@@ -32,7 +31,6 @@
 ::-webkit-scrollbar-corner{
   display:none;
 }
-
 
 :root{
   --theme-filter: none;
