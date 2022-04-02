@@ -1,56 +1,128 @@
 <template>
-  <el-menu
-    default-active="2"
-    class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    @open="handleOpen"
-    @close="handleClose"
-  >
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-
-  </el-menu>
+  <n-space vertical>
+    <n-switch v-model:value="collapsed" />
+    <n-layout has-sider>
+      <n-layout-sider
+        bordered
+        collapse-mode="width"
+        :collapsed-width="64"
+        :width="240"
+        :collapsed="collapsed"
+        show-trigger
+        @collapse="collapsed = true"
+        @expand="collapsed = false"
+      >
+        <n-menu
+          v-model:value="activeKey"
+          :collapsed="collapsed"
+          :collapsed-width="64"
+          :collapsed-icon-size="22"
+          :options="menuOptions"
+        />
+      </n-layout-sider>
+      <n-layout>
+        <span>内容</span>
+      </n-layout>
+    </n-layout>
+  </n-space>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
+<script lang="ts">
+import { defineComponent, h, ref, Component } from 'vue'
+import { NIcon } from 'naive-ui'
+import type { MenuOption } from 'naive-ui'
 import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from '@element-plus/icons-vue'
+  BookOutline as BookIcon,
+  PersonOutline as PersonIcon,
+  WineOutline as WineIcon
+} from '@vicons/ionicons5'
 
-const isCollapse = ref(false)
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+function renderIcon (icon: Component) {
+  return () => h(NIcon, null, { default: () => h(icon) })
 }
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-</script>
 
-<style lang="less" module>
-:global{
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 100%;
+const menuOptions: MenuOption[] = [
+  {
+    label: '且听风吟',
+    key: 'hear-the-wind-sing',
+    icon: renderIcon(BookIcon)
+  },
+  {
+    label: '1973年的弹珠玩具',
+    key: 'pinball-1973',
+    icon: renderIcon(BookIcon),
+    disabled: true,
+    children: [
+      {
+        label: '鼠',
+        key: 'rat'
+      }
+    ]
+  },
+  {
+    label: '寻羊冒险记',
+    key: 'a-wild-sheep-chase',
+    disabled: true,
+    icon: renderIcon(BookIcon)
+  },
+  {
+    label: '舞，舞，舞',
+    key: 'dance-dance-dance',
+    icon: renderIcon(BookIcon),
+    children: [
+      {
+        type: 'group',
+        label: '人物',
+        key: 'people',
+        children: [
+          {
+            label: '叙事者',
+            key: 'narrator',
+            icon: renderIcon(PersonIcon)
+          },
+          {
+            label: '羊男',
+            key: 'sheep-man',
+            icon: renderIcon(PersonIcon)
+          }
+        ]
+      },
+      {
+        label: '饮品',
+        key: 'beverage',
+        icon: renderIcon(WineIcon),
+        children: [
+          {
+            label: '威士忌',
+            key: 'whisky'
+          }
+        ]
+      },
+      {
+        label: '食物',
+        key: 'food',
+        children: [
+          {
+            label: '三明治',
+            key: 'sandwich'
+          }
+        ]
+      },
+      {
+        label: '过去增多，未来减少',
+        key: 'the-past-increases-the-future-recedes'
+      }
+    ]
   }
-}
-</style>
+]
+
+export default defineComponent({
+  setup () {
+    return {
+      activeKey: ref<string | null>(null),
+      collapsed: ref(true),
+      menuOptions
+    }
+  }
+})
+</script>

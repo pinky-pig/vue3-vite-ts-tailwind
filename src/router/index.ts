@@ -1,3 +1,4 @@
+import type { App } from 'vue';
 import { createRouter, createWebHistory, RouteRecordRaw, } from 'vue-router'
 import Layout from '../layout/Index.vue'
 
@@ -21,10 +22,13 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(),
   routes,
 })
 
-export default router
+export async function setupRouter(app: App) {
+  app.use(router);
+  await router.isReady();
+}
 

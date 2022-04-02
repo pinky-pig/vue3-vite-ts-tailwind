@@ -1,28 +1,31 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-const app = createApp(App)
+import { setupStore } from './store';
+import { setupRouter } from './router';
+import { setupNaiveUI, setupElementUI} from './setup/index';
+import { setupStyle } from './styles/index';
 
-// tailWind-css
-import './style/index.css'
+async function setupApp() {
 
-// 路由
-import router from './router/index'
-app.use(router)
+  // 设置样式
+  setupStyle()
 
-// naive组件
-// 通用字体
-import 'vfonts/Lato.css'
-// 等宽字体
-import 'vfonts/FiraCode.css'
-import { naive } from './setup/naive'
-app.use(naive)
+  const app = createApp(App);
 
-// ElementUI
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-app.use(ElementPlus)
+  // 挂载pinia状态
+  setupStore(app)
 
-// VueX
-import store from './store'
-app.use(store)
-app.mount('#app')
+  // 按需引入naiveUI
+  setupNaiveUI(app)
+  // 全局引入elementUI
+  setupElementUI(app)
+
+  // 挂载路由
+  await setupRouter(app);
+
+  // 路由准备就绪后挂载 App
+  app.mount('#app');
+}
+
+setupApp();
+

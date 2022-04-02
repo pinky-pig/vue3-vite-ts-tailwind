@@ -35,9 +35,11 @@ import { Sidebar, NavigationBar, Main } from './index'
   @apply flex flex-row flex-1;
 
   .sidebar{
-    min-width: 200px;
-    width: 200px;
+    // 不设置最小宽度，让里面的sideBar内容自动填充
+    // min-width: 200px;
+    // width: 200px;
     height: 100%;
+    max-width: 200px;
   }
   .main{
     flex: 1;

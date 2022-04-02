@@ -11,7 +11,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${path.resolve('src/style/theme.less')}";`,
+          hack: `true; @import (reference) "${path.resolve('src/styles/theme.less')}";`,
         },
         javascriptEnabled: true
       }
