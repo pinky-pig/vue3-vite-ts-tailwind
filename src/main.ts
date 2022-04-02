@@ -6,7 +6,6 @@ import { setupNaiveUI, setupElementUI} from './setup/index';
 import { setupStyle } from './styles/index';
 
 async function setupApp() {
-
   // 设置样式
   setupStyle()
 
