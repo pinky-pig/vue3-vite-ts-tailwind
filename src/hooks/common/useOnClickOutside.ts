@@ -9,7 +9,7 @@ import { onMounted, onUnmounted } from 'vue';
  *    console.log('Clicked outside');
  *  })
  */
-export const useOnClickOutside = (ref:any, callback = () => {}) => {
+export default function useOnClickOutside (ref:any, callback = () => {}) {
   function handleClickOutside(event:any) {
     if (ref.value && !ref.value.contains(event.target)) {
       callback()
