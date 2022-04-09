@@ -21,8 +21,8 @@ import { isDark, toggleDark } from '@/plugins'
 
 .navigation-bar{
   @apply wh-full flex-y-center;
-  background: @layout-header-bg;
-  color: @layout-header-text;
+  background: var(--layout-header-bg);
+  color: var(--layout-header-text);
   padding: 0 2rem;
 }
 
