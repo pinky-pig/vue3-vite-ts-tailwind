@@ -1,41 +1,41 @@
 <template>
   <div :class='$style["navigation-bar"]'>
-    logo
-    <el-switch v-model="themeSwitch" active-color="#13ce66" inactive-color="#ff4949"  @click="changeThemeFunc"></el-switch>
-    <el-button type="primary" @click="viewViewport"> alert</el-button>
+    <div class="w-[40px] h-[40px]">
+      <img src="https://picsum.photos/40" alt="">
+    </div>
+    <div class=" flex flex-1 flex-row justify-between">
+      <div></div>
+      <div class=" flex-y-center">
+        <!-- <Icon :icon="isDark ? 'akar-icons:moon' : 'akar-icons:sun'"
+          class=" w-6 h-6 cursor-pointer"
+          @click="changeThemeFunc();toggleDark()"
+        /> -->
 
-    <div class=" w-20 h-10 bg-pink-300" ref="containerCO" ></div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang='ts'>
-import { useTheme, useViewport, useOnClickOutside} from "@/hooks"
-import { ref } from "@vue/reactivity";
-import { anchorLight } from "naive-ui/lib/anchor/styles";
+import { useTheme } from "@/hooks"
+import { Icon } from '@iconify/vue';
+// import { isDark, toggleDark } from '@/plugins'
+
 const changeTheme = useTheme();
-const themeSwitch = ref(true)
+// const themeSwitch = ref(true)
 /**切换预置主题颜色 */
 const changeThemeFunc = () => {
-  themeSwitch.value ? changeTheme('default') : changeTheme('dark')
+  isDark.value ? changeTheme('dark') : changeTheme('default')
 }
-/**返回当前设备屏幕  */
-const viewViewport = () => { }
-const { device } = useViewport({ mobile: 680, tablet: 1080 });
-console.log(device.value)
-/**点击其他区域 */
-const containerCO = ref(null);
-useOnClickOutside(containerCO, () => {
-  console.log('Clicked outside');
-})
 
 </script>
 
 <style lang='less' module>
 
 .navigation-bar{
-  @apply w-full h-full flex items-center;
+  @apply wh-full flex-y-center;
   background: @layout-header-bg;
   color: @layout-header-text;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 </style>
