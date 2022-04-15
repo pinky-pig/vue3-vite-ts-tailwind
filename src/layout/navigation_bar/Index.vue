@@ -1,10 +1,14 @@
 <template>
   <div :class='$style["navigation-bar"]'>
-    <div class="w-[40px] h-[40px]">
+    <div class="w-[40px] h-[40px] rounded-xl overflow-hidden">
       <img src="https://picsum.photos/40" alt="">
     </div>
     <div class=" flex flex-1 flex-row justify-between">
-      <div></div>
+      <div>
+        <n-button type="primary" @click="toggleRouter">
+          toggle
+        </n-button>
+      </div>
       <div class=" flex-y-center">
         <Icon :icon="isDark ? 'akar-icons:moon' : 'akar-icons:sun'"
           class=" w-6 h-6 cursor-pointer" @click="toggleDark()" />
@@ -15,6 +19,14 @@
 <script setup lang='ts'>
 import { Icon } from '@iconify/vue';
 import { isDark, toggleDark } from '@/plugins'
+const router = useRouter()
+const toggleRouter = () => {
+  router.push({
+    path:'/error',
+    query:{ num:1 }
+  });
+}
+
 </script>
 
 <style lang='less' module>

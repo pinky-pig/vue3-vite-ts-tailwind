@@ -2,12 +2,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { setupStore } from './store';
 import { setupRouter } from './router';
-import { setupNaiveUI, setupElementUI} from './setup/index';
+import { setupNaiveUI, setupElementUI, setupNaiveTools} from './setup/index';
 import { setupStyle } from './styles/index';
 
 async function setupApp() {
   // 设置样式
   setupStyle()
+  // 设置NProgress
+  setupNaiveTools()
 
   const app = createApp(App);
 

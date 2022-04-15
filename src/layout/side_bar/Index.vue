@@ -1,6 +1,6 @@
 <template>
   <div :class='$style["side-bar"]'>
-    side-bar
+
   </div>
 </template>
 
@@ -11,6 +11,6 @@
   @apply wh-full flex-y-center border-r border-gray-200;
   background: var(--layout-sidebar-bg);
   color: var(--layout-sidebar-text);
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 </style>
