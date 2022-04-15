@@ -20,7 +20,7 @@ import { isDark, toggleDark } from '@/plugins'
 <style lang='less' module>
 
 .navigation-bar{
-  @apply wh-full flex-y-center;
+  @apply wh-full flex-y-center border-gray-200 border-b;
   background: var(--layout-header-bg);
   color: var(--layout-header-text);
   padding: 0 2rem;
