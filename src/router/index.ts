@@ -20,16 +20,26 @@ const routes: RouteRecordRaw[] = [
         }
       },
       {
-        path: '/404',
-        component: () => import(/* webpackChunkName: "dashboard" */ '../views/error/Index.vue'),
-        name: 'error',
+        path: '/projects',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/projects/index.vue'),
+        name: 'projects',
         meta: {
-          title: 'error',
+          title: 'projects',
           icon: '#icondashboard',
           affix: true
         }
       },
     ]
+  },
+  {
+    path: '/404',
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/error/Index.vue'),
+    name: 'error',
+    meta: {
+      title: 'error',
+      icon: '#icondashboard',
+      affix: true
+    }
   },
 ]
 

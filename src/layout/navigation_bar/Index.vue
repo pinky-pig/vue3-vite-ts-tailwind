@@ -12,8 +12,8 @@
           <n-input :theme="isDark ? darkTheme : undefined" type="text" placeholder="search" v-model:value="keyWord" />
         </n-space>
         <nav class="base-hover">Blog</nav>
-        <nav class="base-hover">Project</nav>
-        <nav class="base-hover" @click="routerPush">404</nav>
+        <nav class="base-hover" @click="routerPush('projects')">Projects</nav>
+        <nav class="base-hover" @click="routerPush('404')">404</nav>
         <Icon :icon="isDark ? 'akar-icons:moon' : 'akar-icons:sun'"
           class=" w-6 h-6 base-hover" @click="toggleDark()" />
       </div>
@@ -28,10 +28,10 @@ import { useRouter } from 'vue-router';
 const keyWord = ref(null)
 
 const router = useRouter()
-const routerPush = () => {
+const routerPush = (routeName) => {
   router.push({
-    path:'/404',
-    query:{ num:1 }
+    path: routeName,
+    query: { num:1 }
   });
 }
 const goHome = () => {
