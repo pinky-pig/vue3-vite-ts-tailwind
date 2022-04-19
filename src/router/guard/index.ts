@@ -10,6 +10,6 @@ export function createRouterGuard(router: Router) {
     window.$loadingBar?.start()
   });
   router.afterEach((to: any) => {
-    // window.$loadingBar?.finish()
+    window.$loadingBar?.finish()
   })
 }
