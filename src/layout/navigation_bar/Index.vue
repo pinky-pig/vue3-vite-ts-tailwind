@@ -1,6 +1,6 @@
 <template>
   <div :class='$style["navigation-bar"]'>
-    <div class="w-[40px] h-[40px] rounded-xl overflow-hidden">
+    <div class="w-[40px] h-[40px] rounded-xl overflow-hidden cursor-pointer" @click="goHome" >
       <img src="https://picsum.photos/40" alt="">
     </div>
     <div class=" flex flex-1 flex-row justify-between">
@@ -33,6 +33,9 @@ const routerPush = () => {
     path:'/404',
     query:{ num:1 }
   });
+}
+const goHome = () => {
+  router.push('/');
 }
 
 
