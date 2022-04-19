@@ -5,13 +5,16 @@
     </div>
     <div class=" flex flex-1 flex-row justify-between">
       <div>
-        <n-button type="primary" @click="toggleRouter">
-          toggle
-        </n-button>
+
       </div>
-      <div class=" flex-y-center">
+      <div :class="$style.right" class=" flex-y-center gap-5">
+        <n-space vertical>
+          <n-input :theme="isDark ? darkTheme : undefined" type="text" placeholder="搜索" v-model:value="keyWord" />
+        </n-space>
+        <nav class="base-hover">Blog</nav>
+        <nav class="base-hover">Project</nav>
         <Icon :icon="isDark ? 'akar-icons:moon' : 'akar-icons:sun'"
-          class=" w-6 h-6 cursor-pointer" @click="toggleDark()" />
+          class=" w-6 h-6 base-hover" @click="toggleDark()" />
       </div>
     </div>
   </div>
@@ -19,20 +22,14 @@
 <script setup lang='ts'>
 import { Icon } from '@iconify/vue';
 import { isDark, toggleDark } from '@/plugins'
-const router = useRouter()
-const toggleRouter = () => {
-  router.push({
-    path:'/error',
-    query:{ num:1 }
-  });
-}
+import { darkTheme } from 'naive-ui'
+const keyWord = ref(null)
 
 </script>
 
 <style lang='less' module>
-
 .navigation-bar{
-  @apply wh-full flex-y-center border-gray-200 border-b;
+  @apply wh-full flex-y-center border-gray-200 border-b select-none;
   background: var(--layout-header-bg);
   color: var(--layout-header-text);
   padding: 0 2rem;

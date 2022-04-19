@@ -40,7 +40,8 @@ export default defineConfig({
     'fixed-center': 'fixed left-0 top-0 flex-center wh-full',
     'nowrap-hidden': 'whitespace-nowrap overflow-hidden',
     'ellipsis-text': 'nowrap-hidden overflow-ellipsis',
-    'transition-base': 'transition-all duration-300 ease-in-out'
+    'transition-base': 'transition-all duration-300 ease-in-out',
+    'base-hover':'hover:text-gray-400 cursor-pointer'
   },
   theme: {
     extend: {
