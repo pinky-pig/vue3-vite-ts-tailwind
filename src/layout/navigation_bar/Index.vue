@@ -31,7 +31,7 @@ const router = useRouter()
 const routerPush = (routeName) => {
   router.push({
     path: routeName,
-    query: { num:1 }
+    // query: { num:1 }
   });
 }
 const goHome = () => {

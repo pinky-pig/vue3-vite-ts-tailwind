@@ -1,6 +1,6 @@
 import type { App } from 'vue';
 import { createRouter, createWebHistory, RouteRecordRaw, } from 'vue-router'
-import Layout from '../layout/Index.vue'
+import Layout from '../layout/index.vue'
 import { createRouterGuard } from './guard';
 
 const routes: RouteRecordRaw[] = [
@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/',
-        component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/Index.vue'),
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/index.vue'),
         name: 'Dashboard',
         meta: {
           title: 'dashboard',
@@ -33,7 +33,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/404',
-    component: () => import(/* webpackChunkName: "dashboard" */ '../views/error/Index.vue'),
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/error/index.vue'),
     name: 'error',
     meta: {
       title: 'error',

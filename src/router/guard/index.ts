@@ -7,9 +7,9 @@ import { Router } from 'vue-router'
  */
 export function createRouterGuard(router: Router) {
   router.beforeEach(async () => {
-    window.$loadingBar?.start();
+    window.$loadingBar?.start()
   });
   router.afterEach((to: any) => {
-    window.$loadingBar?.finish();
+    // window.$loadingBar?.finish()
   })
 }
