@@ -10,6 +10,7 @@ export function createRouterGuard(router: Router) {
     window.$loadingBar?.start()
   });
   router.afterEach((to: any) => {
+    useTitle(to.meta.title);
     window.$loadingBar?.finish()
   })
 }
