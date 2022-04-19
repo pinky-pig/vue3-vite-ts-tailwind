@@ -9,7 +9,7 @@
       </div>
       <div :class="$style.right" class=" flex-y-center gap-5">
         <n-space vertical>
-          <n-input :theme="isDark ? darkTheme : undefined" type="text" placeholder="搜索" v-model:value="keyWord" />
+          <n-input :theme="isDark ? darkTheme : undefined" type="text" placeholder="search" v-model:value="keyWord" />
         </n-space>
         <nav class="base-hover">Blog</nav>
         <nav class="base-hover">Project</nav>
