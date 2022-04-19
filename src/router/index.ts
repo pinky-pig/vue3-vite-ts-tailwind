@@ -20,7 +20,7 @@ const routes: RouteRecordRaw[] = [
         }
       },
       {
-        path: '/error',
+        path: '/404',
         component: () => import(/* webpackChunkName: "dashboard" */ '../views/error/Index.vue'),
         name: 'error',
         meta: {

@@ -4,8 +4,6 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    RoutePage: typeof import('./src/components/RoutePage.vue')['default']
     NaiveProvider: typeof import('./src/components/common/NaiveProvider.vue')['default']
   }
 }

@@ -13,6 +13,7 @@
         </n-space>
         <nav class="base-hover">Blog</nav>
         <nav class="base-hover">Project</nav>
+        <nav class="base-hover" @click="routerPush">404</nav>
         <Icon :icon="isDark ? 'akar-icons:moon' : 'akar-icons:sun'"
           class=" w-6 h-6 base-hover" @click="toggleDark()" />
       </div>
@@ -23,7 +24,17 @@
 import { Icon } from '@iconify/vue';
 import { isDark, toggleDark } from '@/plugins'
 import { darkTheme } from 'naive-ui'
+import { useRouter } from 'vue-router';
 const keyWord = ref(null)
+
+const router = useRouter()
+const routerPush = () => {
+  router.push({
+    path:'/404',
+    query:{ num:1 }
+  });
+}
+
 
 </script>
 

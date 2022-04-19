@@ -14,6 +14,7 @@
     </div>
 
   </div>
+  <NaiveProvider></NaiveProvider>
 </template>
 <script setup lang="ts">
 import { Sidebar, NavigationBar, Main } from './index'
