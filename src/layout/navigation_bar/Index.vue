@@ -38,7 +38,6 @@ const goHome = () => {
   router.push('/');
 }
 
-
 </script>
 
 <style lang='less' module>
