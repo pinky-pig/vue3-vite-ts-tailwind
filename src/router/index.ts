@@ -29,6 +29,16 @@ const routes: RouteRecordRaw[] = [
           affix: true
         }
       },
+      {
+        path: '/note',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/note/index.vue'),
+        name: 'note',
+        meta: {
+          title: 'note',
+          icon: '#icondashboard',
+          affix: true
+        }
+      },
     ]
   },
   {

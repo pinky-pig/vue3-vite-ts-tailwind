@@ -1,66 +1,76 @@
 <template>
   <div :class='$style["side-bar"]'>
-    <el-menu
-      default-active="2"
-      class="el-menu-vertical-demo"
-      :collapse="isCollapse"
-      @open="handleOpen"
-      @close="handleClose"
-    >
-      <el-sub-menu index="1">
-        <template #title>
-          <el-icon><location /></el-icon>
-          <span>Navigator One</span>
-        </template>
-        <el-menu-item-group>
-          <template #title><span>Group One</span></template>
-          <el-menu-item index="1-1">item one</el-menu-item>
-          <el-menu-item index="1-2">item two</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Two">
-          <el-menu-item index="1-3">item three</el-menu-item>
-        </el-menu-item-group>
-        <el-sub-menu index="1-4">
-          <template #title><span>item four</span></template>
-          <el-menu-item index="1-4-1">item one</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-
-    </el-menu>
+    <n-menu :options="menuOptions" />
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { Icon } from '@iconify/vue';
+import { NIcon } from 'naive-ui'
+import type { MenuOption } from 'naive-ui'
+import { RouterLink } from 'vue-router'
 import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from '@element-plus/icons-vue'
+  LaptopOutline as WorkIcon,
+  LogOutOutline as HomeIcon,
+  AlertCircleOutline as ErrorIcon,
+  FolderOpenOutline as FolderIcon,
+} from '@vicons/ionicons5'
 
-const isCollapse = ref(false)
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+const renderIcon = (icon: Component) => {
+  return () => h(NIcon, null, { default: () => h(icon) })
 }
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+const menuOptions: MenuOption[] = [
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: '/'
+          }
+        },
+        { default: () => 'Dashboard' }
+      ),
+    key: 'go-to-dashboard',
+    icon: renderIcon(WorkIcon)
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: '/note'
+          }
+        },
+        { default: () => 'note' }
+      ),
+    key: 'go-to-note',
+    icon: renderIcon(FolderIcon)
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: '/404'
+          }
+        },
+        { default: () => '404' }
+      ),
+    key: 'go-to-404',
+    icon: renderIcon(ErrorIcon)
+  },
+
+]
 </script>
 
 <style lang="less" module>
 .side-bar{
-  @apply wh-full flex-y-center border-r border-gray-200;
+  @apply wh-full border-r border-gray-200;
   background: var(--layout-sidebar-bg);
   color: var(--layout-sidebar-text);
   // padding: 0 1rem;
-}
-:global{
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
-    min-width: 200px;
-    min-height: 100%;
-    background: var(--layout-sidebar-bg);
-    color: var(--layout-sidebar-text);
-  }
 }
 </style>
