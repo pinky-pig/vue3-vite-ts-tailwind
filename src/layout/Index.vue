@@ -43,6 +43,7 @@ import { Sidebar, NavigationBar, Main } from './index'
     max-width: 200px;
   }
   .main{
+    @apply flex-center;
     flex: 1;
     width: 200px;
     height: 100%;
