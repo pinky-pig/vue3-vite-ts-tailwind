@@ -1,10 +1,12 @@
 <template>
   <div :class='$style["side-bar"]'>
-    <n-menu :options="menuOptions" />
+    <n-menu :theme="isDark ? darkTheme : undefined" :options="menuOptions" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { isDark, toggleDark } from '@/plugins'
+import { darkTheme } from 'naive-ui'
 import { Icon } from '@iconify/vue';
 import { NIcon } from 'naive-ui'
 import type { MenuOption } from 'naive-ui'
