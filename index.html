@@ -16,15 +16,36 @@
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+<script>
+  let theme = window.localStorage.getItem('vueuse-color-scheme')
+  document.getElementsByTagName('html')[0].className = theme
+</script>
 <style>
   body{
     margin: 0;
+  }
+  html.dark{
+    --cloak-bg             :#333;
+    --cloak-text           :#FFF;
+  }
+  html{
+    --cloak-bg             :#F5F6F6;
+    --cloak-text           :#000;
+  }
+  [v-cloak] {
+    background: #F5F6F6;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cloak-bg);
+    color: var(--cloak-text);
   }
   [v-cloak] .app-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* background-color: var(--cloak-bg); */
     width: 100%;
     height: 100%;
   }
@@ -57,10 +78,5 @@
       transform: rotateY(360deg) rotateX(360deg);
     }
   }
-  [v-cloak] {
-    background: #F5F6F6;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-  }
+
 </style>
