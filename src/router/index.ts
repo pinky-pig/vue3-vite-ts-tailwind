@@ -30,6 +30,26 @@ const routes: RouteRecordRaw[] = [
         }
       },
       {
+        path: '/threeJS',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/projects/threejs/index.vue'),
+        name: 'threeJS',
+        meta: {
+          title: 'threeJS',
+          icon: '#icondashboard',
+          affix: true
+        }
+      },
+      {
+        path: '/map',
+        component: () => import(/* webpackChunkName: "dashboard" */ '../views/projects/map/index.vue'),
+        name: 'map',
+        meta: {
+          title: 'map',
+          icon: '#icondashboard',
+          affix: true
+        }
+      },
+      {
         path: '/note',
         component: () => import(/* webpackChunkName: "dashboard" */ '../views/note/index.vue'),
         name: 'note',

@@ -50,16 +50,7 @@ const menuOptions: MenuOption[] = [
     }
   },
   {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: '/projects'
-          }
-        },
-        { default: () => 'projects' }
-      ),
+    label: "projects",
     key: 'go-to-projects',
     icon: renderIcon(FolderIcon),
     children: [
@@ -69,12 +60,30 @@ const menuOptions: MenuOption[] = [
         key: 'projects',
         children: [
           {
-            label: 'ThreeJS',
+            label: () =>
+              h(
+                RouterLink,
+                {
+                  to: {
+                    path: '/threeJS'
+                  }
+                },
+                { default: () => 'ThreeJS' }
+              ),
             key: 'ThreeJS',
             icon: renderIcon(ThreeIcon)
           },
           {
-            label: 'Map',
+            label: () =>
+              h(
+                RouterLink,
+                {
+                  to: {
+                    path: '/map'
+                  }
+                },
+                { default: () => 'Map' }
+              ),
             key: 'Map',
             icon: renderIcon(MapIcon)
           }
