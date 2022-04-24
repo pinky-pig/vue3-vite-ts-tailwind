@@ -2,15 +2,19 @@
 
 html.dark{
   --primary-bg             :#333;
+  --primary-bg-dark        :#505354;
   --primary-text           :#FFF;
+
   --layout-header-bg       : var(--primary-bg) ;
   --layout-header-text     : var(--primary-text);
 
-  --layout-sidebar-bg       : var(--primary-bg) ;
-  --layout-sidebar-text     : var(--primary-text);
+  --layout-sidebar-bg      : var(--primary-bg) ;
+  --layout-sidebar-text    : var(--primary-text);
 
-  --layout-main-bg       : var(--primary-bg) ;
-  --layout-main-text     : var(--primary-text);
+  --layout-main-bg         : var(--primary-bg);
+  --layout-main-outer-bg   : var(--primary-bg-dark);
+  --layout-main-text       : var(--primary-text);
+
 
   --color-accent           : hsl(241, 99%, 70%);
   --color-primary          : var(--color-accent);
@@ -27,12 +31,14 @@ html.dark{
 }
 html{
   --primary-bg             :#F5F6F6;
+  --primary-bg-light       :#ffffff;
   --primary-text           :#000;
   --layout-header-bg       : var(--primary-bg) ;
   --layout-header-text     : var(--primary-text);
   --layout-sidebar-bg      : var(--primary-bg) ;
   --layout-sidebar-text    : var(--primary-text);
   --layout-main-bg         : var(--primary-bg) ;
+  --layout-main-outer-bg   : var(--primary-bg-light) ;
   --layout-main-text       : var(--primary-text);
 }
 

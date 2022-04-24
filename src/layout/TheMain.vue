@@ -16,10 +16,12 @@
 
 <style lang="less" module>
 .app-main {
-  /* 50= navbar  50  */
+  /* 63 = navbar  63  */
+  background: var(--layout-main-outer-bg);
   min-height: 350px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 63px);
   width: 100%;
+  padding: 15px;
   position: relative;
   overflow: hidden;
 }

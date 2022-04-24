@@ -1,6 +1,7 @@
 <template>
   <div :class='$style["dashboard"]'>
-    dashboard
+    1.项目嵌套
+    2.组件渲染前的loading
   </div>
 </template>
 <script setup lang="ts">
@@ -11,6 +12,7 @@
   @apply wh-full flex-y-center;
   background: var(--layout-main-bg);
   color: var(--layout-main-text);
+  border-radius: 2%;
   padding: 0 2rem;
 }
 </style>
