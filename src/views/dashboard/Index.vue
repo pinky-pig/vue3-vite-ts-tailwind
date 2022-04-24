@@ -2,6 +2,7 @@
   <div :class='$style["dashboard"]'>
     1.项目嵌套
     2.组件渲染前的loading
+    3.https://picsum.photos/40
   </div>
 </template>
 <script setup lang="ts">
