@@ -105,20 +105,6 @@ const menuOptions: MenuOption[] = [
     key: 'go-to-note',
     icon: renderIcon(NoteIcon)
   },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: '/404'
-          }
-        },
-        { default: () => '404' }
-      ),
-    key: 'go-to-404',
-    icon: renderIcon(ErrorIcon)
-  },
 
 ]
 </script>
