@@ -16,6 +16,9 @@ import {
   LogOutOutline as HomeIcon,
   AlertCircleOutline as ErrorIcon,
   FolderOpenOutline as FolderIcon,
+  BookOutline as NoteIcon,
+  EarthOutline as MapIcon,
+  DiscOutline as ThreeIcon,
 } from '@vicons/ionicons5'
 
 const renderIcon = (icon: Component) => {
@@ -37,6 +40,49 @@ const menuOptions: MenuOption[] = [
     icon: renderIcon(WorkIcon)
   },
   {
+    key: 'divider-1',
+    type: 'divider',
+    props: {
+      style: {
+        marginLeft: '32px',
+        backgroundColor: '#18a05880'
+      }
+    }
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: '/projects'
+          }
+        },
+        { default: () => 'projects' }
+      ),
+    key: 'go-to-projects',
+    icon: renderIcon(FolderIcon),
+    children: [
+      {
+        type: 'group',
+        label: '项目',
+        key: 'projects',
+        children: [
+          {
+            label: 'ThreeJS',
+            key: 'ThreeJS',
+            icon: renderIcon(ThreeIcon)
+          },
+          {
+            label: 'Map',
+            key: 'Map',
+            icon: renderIcon(MapIcon)
+          }
+        ]
+      },
+    ]
+  },
+  {
     label: () =>
       h(
         RouterLink,
@@ -48,7 +94,7 @@ const menuOptions: MenuOption[] = [
         { default: () => 'note' }
       ),
     key: 'go-to-note',
-    icon: renderIcon(FolderIcon)
+    icon: renderIcon(NoteIcon)
   },
   {
     label: () =>
@@ -73,6 +119,7 @@ const menuOptions: MenuOption[] = [
   @apply wh-full border-r border-gray-200;
   background: var(--layout-sidebar-bg);
   color: var(--layout-sidebar-text);
+  min-width: 170px;
   // padding: 0 1rem;
 }
 </style>
