@@ -3,6 +3,7 @@
     1.项目嵌套
     2.组件渲染前的loading
     3.https://picsum.photos/40
+    4.vue-plugin-pages 基于文件系统的路由生成器
   </div>
 </template>
 <script setup lang="ts">

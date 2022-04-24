@@ -4,7 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import WindiCSS from 'vite-plugin-windicss'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
+import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 const path = require('path');
 
@@ -13,6 +13,9 @@ export default defineConfig({
   plugins: [
     vue({
       reactivityTransform: true,
+    }),
+    Pages({
+      dirs: 'src/views'
     }),
     vueJsx(),
     WindiCSS(),
@@ -34,8 +37,9 @@ export default defineConfig({
       extensions: ['vue'],
       // 配置文件生成位置
       dts: 'components.d.ts'
-    }
-    )],
+    }),
+
+  ],
   resolve: {
     alias: {
       '~': path.resolve('./'),

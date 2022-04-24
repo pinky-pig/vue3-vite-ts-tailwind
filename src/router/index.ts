@@ -1,8 +1,8 @@
 import type { App } from 'vue';
 import { createRouter, createWebHistory, RouteRecordRaw, } from 'vue-router'
 import Layout from '../layout/index.vue'
-import { createRouterGuard } from './guard';
-
+import { createRouterGuard } from './guard'
+// import routes from 'virtual:generated-pages'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
