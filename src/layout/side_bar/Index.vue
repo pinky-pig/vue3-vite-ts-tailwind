@@ -111,7 +111,7 @@ const menuOptions: MenuOption[] = [
 
 <style lang="less" module>
 .side-bar{
-  @apply wh-full border-r border-gray-200;
+  @apply wh-full border-r border-gray-200 relative;
   background: var(--layout-sidebar-bg);
   color: var(--layout-sidebar-text);
   min-width: 170px;
