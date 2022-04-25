@@ -30,7 +30,7 @@ import setup from 'naive-ui/lib/radio/src/use-radio';
 const keyWord = ref(null)
 
 const router = useRouter()
-const routerPush = (routeName) => {
+const routerPush = (routeName:string) => {
   router.push({
     path: routeName,
     // query: { num:1 }
