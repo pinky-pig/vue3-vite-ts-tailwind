@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { isDark, toggleDark } from '@/plugins'
+import { isDark, toggleDark } from '@/composables'
 import { darkTheme } from 'naive-ui'
 import { Icon } from '@iconify/vue';
 import { NIcon } from 'naive-ui'
@@ -20,6 +20,7 @@ import {
   EarthOutline as MapIcon,
   DiscOutline as ThreeIcon,
 } from '@vicons/ionicons5'
+import { Component } from 'vue';
 
 const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, { default: () => h(icon) })

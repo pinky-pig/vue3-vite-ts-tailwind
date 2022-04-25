@@ -23,7 +23,7 @@
 </template>
 <script setup lang='ts'>
 import { Icon } from '@iconify/vue';
-import { isDark, toggleDark } from '@/plugins'
+import { isDark, toggleDark } from '@/composables'
 import { darkTheme } from 'naive-ui'
 import { useRouter } from 'vue-router';
 import setup from 'naive-ui/lib/radio/src/use-radio';
