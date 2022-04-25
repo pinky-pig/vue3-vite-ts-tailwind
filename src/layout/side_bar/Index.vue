@@ -117,4 +117,5 @@ const menuOptions: MenuOption[] = [
   min-width: 170px;
   // padding: 0 1rem;
 }
+
 </style>
