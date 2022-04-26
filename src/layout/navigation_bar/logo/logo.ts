@@ -1,4 +1,4 @@
 import Logo from './index.vue'
-// import { createStarport } from '~/composables'
+import { createStarport } from '@/composables'
 
-// export const { ContainerComponent, ProxyComponent } = createStarport(Logo)
+export const { ContainerComponent, ProxyComponent } = createStarport(Logo)

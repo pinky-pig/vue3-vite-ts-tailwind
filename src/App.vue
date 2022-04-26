@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import { ProxyComponent } from '@/layout/navigation_bar/logo/logo'
+</script>
+
 <template>
   <router-view ></router-view>
+  <ProxyComponent />
 </template>
 <style>
 #app {

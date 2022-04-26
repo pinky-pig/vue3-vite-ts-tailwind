@@ -1,9 +1,10 @@
 <template>
   <div :class='$style["note-page"]'>
-    note
+    <ContainerComponent class="w-120px h-120px" />
   </div>
 </template>
 <script setup lang="ts">
+import { ContainerComponent } from '@/layout/navigation_bar/logo/logo'
 </script>
 
 <style lang='less' module>
