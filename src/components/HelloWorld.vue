@@ -4,7 +4,7 @@
   <h4>{{ name }}</h4>
   <h4>{{ sex }}</h4>
   <button @click='changeName'>method改变张三</button>
-  <h1>{{toolsType}}</h1>
+  <!-- <h1>{{toolsType}}</h1> -->
   <br>
   <hr>
   <h3>{{msg}}</h3>
@@ -32,24 +32,14 @@
 </template>
 
 <script setup lang="ts">
-import { useSlots, reactive, ref, toRefs, computed, watch, nextTick,
-onBeforeMount,
-onMounted,
-onBeforeUpdate,
-onUpdated,
-onBeforeUnmount,  // destroyed
-onUnmounted,  // beforeDestroyed
-onErrorCaptured,
-onRenderTracked,
-onRenderTriggered,
-} from "vue"
+import { Ref } from 'vue';
 import { useRoute, useRouter, onBeforeRouteLeave, onBeforeRouteUpdate  } from 'vue-router'
 // 二.data
 // ref声明响应式数据，用于声明基本数据类型
-const data:number = ref(1)
+const data:Ref<number> = ref(1)
 data.value = 2
 // reactive声明响应式数据，用于声明引用数据类型
-const person:object = reactive({
+const person = reactive({
   name: '张三',
   sex: '男'
 })
@@ -123,13 +113,13 @@ defineExpose({
   changeName,
 })
 // 十一.插槽slot(匿名插槽、具名插槽、作用域插槽)
-const slots = useSlots()
-// 匿名插槽使用情况
-const defaultSlot = reactive(slots.default && slots.default().length)
-console.log(defaultSlot) // 1
-// 具名插槽使用情况
-const titleSlot = reactive(slots.title && slots.title().length)
-console.log(titleSlot) // 3
+// const slots = useSlots()
+// // 匿名插槽使用情况
+// const defaultSlot = reactive(slots.default && slots.default().length)
+// console.log(defaultSlot) // 1
+// // 具名插槽使用情况
+// const titleSlot = reactive(slots.title && slots.title().length)
+// console.log(titleSlot) // 3
 
 // 十二.路由useRoute和useRouter
 // 必须先声明调用
@@ -161,10 +151,10 @@ onBeforeRouteUpdate((to, from, next) => {
 })
 
 // 十四.Pinia
-import { useToolsStore } from '../store/tools'
-const toolsStore = useToolsStore()
-var toolsType = computed(() => toolsStore.getType)
-console.log(toolsType)
+// import { useToolsStore } from '../store/tools'
+// const toolsStore = useToolsStore()
+// var toolsType = computed(() => toolsStore.getType)
+// console.log(toolsType)
 
 // 十五.生命周期
 onBeforeMount(() => {
